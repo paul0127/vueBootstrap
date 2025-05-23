@@ -29,6 +29,8 @@ declare module 'vue' {
     BOffcanvas: typeof import('bootstrap-vue-next/components/BOffcanvas')['BOffcanvas']
     Breadcrumb: typeof import('./src/components/common/Breadcrumb.vue')['default']
     BRow: typeof import('bootstrap-vue-next/components/BContainer')['BRow']
+    BTab: typeof import('bootstrap-vue-next/components/BTabs')['BTab']
+    BTabs: typeof import('bootstrap-vue-next/components/BTabs')['BTabs']
     Header: typeof import('./src/components/common/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IBi0Circle: typeof import('~icons/bi/0-circle')['default']

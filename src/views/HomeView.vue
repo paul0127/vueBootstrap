@@ -48,6 +48,11 @@ const onReset = (event: Event) => {
     show.value = true
   })
 }
+
+const classOption = ref([
+  { value: null, text: 'Please select an option' },
+  { value: 2, text: '2.已收載藥品' },
+])
 </script>
 
 <template>
@@ -83,30 +88,125 @@ const onReset = (event: Event) => {
           />
         </BFormGroup>
 
-        <BFormGroup id="input-group-2" label="Your Name:" label-for="input-2">
+        <BFormGroup id="input-group-2" label="收文日期" label-for="input-2">
           <BFormInput
             id="input-2"
+            type="date"
             v-model="form.name"
-            placeholder="Enter name"
+            placeholder=""
             required
           />
         </BFormGroup>
-        <BFormGroup id="input-group-3" label="Food:" label-for="input-3">
-          <BFormSelect
-            id="input-3"
-            v-model="form.food"
-            :options="foods"
+
+        <BFormGroup id="input-group-3" label="來文內容" label-for="input-3">
+          <BFormInput
+            id="input-2"
+            type="date"
+            v-model="form.name"
+            placeholder=""
             required
           />
         </BFormGroup>
 
         <BFormGroup id="input-group-4">
           <BFormCheckboxGroup id="checkboxes-4" v-model="form.checked">
-            <BFormCheckbox value="me">Check me out</BFormCheckbox>
-            <BFormCheckbox value="that">Check that out</BFormCheckbox>
+            <BFormCheckbox value="me">紙本流程</BFormCheckbox>
+            <BFormCheckbox value="that">電子流程</BFormCheckbox>
           </BFormCheckboxGroup>
         </BFormGroup>
-        
+
+        <BFormGroup id="input-group-3" label="業務類別" label-for="input-3">
+          <BFormSelect
+            id="input-3"
+            v-model="form.food"
+            :options="classOption"
+            required
+          />
+        </BFormGroup>
+
+        <BFormGroup id="input-group-3" label="承辦人" label-for="input-3">
+          <BFormSelect
+            id="input-3"
+            v-model="form.food"
+            :options="['2.已收載藥品']"
+            required
+          />
+        </BFormGroup>
+
+        <BFormGroup id="input-group-2" label="申請日期" label-for="input-2">
+          <BFormInput
+            id="input-2"
+            type="date"
+            v-model="form.name"
+            placeholder=""
+            required
+          />
+        </BFormGroup>
+
+        <BFormGroup id="input-group-2" label="核准日期" label-for="input-2">
+          <BFormInput
+            id="input-2"
+            type="date"
+            v-model="form.name"
+            placeholder=""
+            required
+          />
+        </BFormGroup>
+
+        <BFormGroup id="input-group-3" label="其他業務說明" label-for="input-3">
+          <BFormInput
+            id="input-2"
+            type="date"
+            v-model="form.name"
+            placeholder=""
+            required
+          />
+        </BFormGroup>
+
+        <BFormGroup id="input-group-3" label="新藥案編備註" label-for="input-3">
+          <BFormInput
+            id="input-2"
+            type="date"
+            v-model="form.name"
+            placeholder=""
+            required
+          />
+        </BFormGroup>
+
+        <div>
+          <BTabs content-class="mt-3">
+            <BTab title="申復註記" active>
+              <BFormGroup
+                id="input-group-2"
+                label="核准日期"
+                label-for="input-2"
+              >
+                <BFormInput
+                  id="input-2"
+                  type="date"
+                  v-model="form.name"
+                  placeholder=""
+                  required
+                />
+              </BFormGroup>
+              <BFormGroup
+                id="input-group-3"
+                label="來文內容"
+                label-for="input-3"
+              >
+                <BFormInput
+                  id="input-2"
+                  type="date"
+                  v-model="form.name"
+                  placeholder=""
+                  required
+                />
+              </BFormGroup>
+            </BTab>
+            <BTab title="申請單位"> </BTab>
+          </BTabs>
+        </div>
+
         <BButton type="submit" variant="primary">Submit</BButton>
         <BButton type="reset" variant="danger">Reset</BButton>
       </BForm>
@@ -119,6 +219,7 @@ const onReset = (event: Event) => {
   align-items: flex-end;
   justify-content: space-between;
   padding: 36px 120px 20px 36px;
+  position: relative;
   .title {
     padding-left: 10px;
     border-left: 5px solid $app-main-color;
@@ -131,6 +232,16 @@ const onReset = (event: Event) => {
     svg {
       margin-right: 5px;
     }
+  }
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width:100px;
+    height:100px;
+    background:#e3e7eb;
+    -webkit-clip-path:inset(20px 10px 30px 10px round 0px 5px 50px 0);
   }
 }
 .main {
