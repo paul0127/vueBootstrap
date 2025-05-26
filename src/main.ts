@@ -15,7 +15,6 @@ app.use(createPinia())
 app.use(router)
 
 router.beforeEach(async (to, from) => {
-  document.title = to.meta?.title || '健保'
 })
 
 app.mount('#app')

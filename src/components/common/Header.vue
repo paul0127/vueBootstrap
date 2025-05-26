@@ -10,7 +10,7 @@ const toggleSidebar = () => {
       <IBiJustify />
     </div>
     <div class="logo ms-4">
-      <img src="../../assets/logo.png" alt="" />
+      <img src="/logo.png" alt="" />
     </div>
     
     <BDropdown variant="primary" menu-class="w-100" class="ms-auto">
